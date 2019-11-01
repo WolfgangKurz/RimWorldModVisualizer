@@ -298,7 +298,9 @@ namespace RimWorldModVisualizer.ViewModels {
 						Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
 						"MissingMods.txt"
 					),
-					MissingList.Select(x => "https://steamcommunity.com/sharedfiles/filedetails/?id=" + x)
+					MissingList
+						.Where(x => int.TryParse(x, out _))
+						.Select(x => "https://steamcommunity.com/sharedfiles/filedetails/?id=" + x)
 				);
 
 				MessageBox.Show(
