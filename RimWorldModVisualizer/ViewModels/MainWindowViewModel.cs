@@ -369,7 +369,7 @@ namespace RimWorldModVisualizer.ViewModels {
 
 			var dialog = new SaveFileDialog {
 				InitialDirectory = ModsConfig,
-				FileName = Path.Combine(ModsConfig, "ModsConfig.xml"),
+				FileName = Path.Combine(ModsConfig, DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".rwmv.xml"),
 				Filter = "RimWorldModVisualizer Mod list (*.rwmv.xml)|*.rwmv.xml|All Files (*.*)|*.*",
 			};
 			if (dialog.ShowDialog() == DialogResult.Cancel) return;
